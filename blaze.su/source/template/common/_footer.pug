@@ -1,0 +1,35 @@
+-
+	var social = [
+		{name: 'Vkontakte'},
+		{name: 'Facebook'},
+		{name: 'Twitter'},
+		{name: 'Instagram'}
+	]
+
+block footer
+	footer.footer
+		.container.-big
+			.footer-content__main
+				a.logo-link(href="/")
+					img.logo-img(src="/assets/img/logo.svg", alt="logotype")
+				+menu('-footer')
+			.social.-copy
+				each item in social
+					a(href="#").social__link
+						+svgMix('social__icon', item.name)
+			.footer-contacts
+				.footer-contacts__top
+					p.footer-contacts__city г. Санкт–Перербург
+					p.contacts-phone
+						span +7 (921) 
+						| 55-66-846
+				p.footer-contacts__address ул. Набережная р. Фонтанки, 123 офис 201
+			.footer-content__bottom
+				p © Copyright 2011−2017 BLAZE
+				a(href="#" data-use="agreement")
+					span(data-content="desktop") Соглашение об обработке персональных данных
+					span(data-content="tablet") Пользовательское соглашение
+				.social
+					each item in social
+						a(href="#").social__link
+							+svgMix('social__icon', item.name)

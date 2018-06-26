@@ -1,0 +1,75 @@
+.footer
+   background-color: $title-grey
+   padding: 72px 40px 55px
+   color: $footer-text
+   @include w1200-
+      padding: 72px 20px 35px
+   @include w768-
+      padding-top: 60px
+   & > .container
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      @media all and (min-width: 768px) and (max-width: 1199px)
+         flex-direction: row-reverse
+      @include w768-
+         flex-direction: column
+         align-items: center
+         text-align: center
+   & .logo-link
+      transform: translateY(-25%)
+   &-content
+      &__main
+         display: flex
+         justify-content: space-between
+         width: 100%
+         max-width: 53.22916666666667vw
+         @include w1200-
+            max-width: none
+         @include w768-
+            display: none
+         &-inner
+            max-width: 81.25vw
+            width: 100%
+            display: flex
+            justify-content: space-between
+      &__bottom
+         display: flex
+         justify-content: space-between
+         width: 100%
+         color: #5a5f66
+         margin-top: 70px
+         @include w1200-
+            flex-direction: column-reverse
+            max-width: max-content
+            margin-top: 0
+         @include w1024-
+            font-size: 16px
+         @include w768-
+            & > *
+               margin-top: 20px
+   &-contacts
+      @include w768-
+         & p
+            margin-bottom: 20px
+      &__top
+         display: flex
+         justify-content: space-between
+         margin-bottom: 17px
+         @include w1200-
+            margin-bottom: 25px
+         @include w768-
+            flex-direction: column
+            margin-bottom: 0
+      &__address
+         line-height: 1.4
+
+a[data-use='agreement']
+   &:hover
+      color: $footer-text
+   & > span[data-content="desktop"]
+      @include w1200-
+         display: none
+   & > span[data-content="tablet"]
+      @media all and (min-width: 1200px)
+         display: none

@@ -1,0 +1,27 @@
+.social
+   @include w1200-
+      display: none
+   &.-copy
+      display: none
+      justify-content: flex-end
+      width: 100%
+      margin: 45px 0 35px
+      @include w1200-
+         display: flex
+      @include w768-
+         margin-top: 0
+         justify-content: center
+   &__link
+      margin-right: 30px
+      display: inline-block
+      &:last-child
+         margin-right: 0
+   &__icon
+      max-width: 20px
+      max-height: 20px
+      fill: #3e4859
+      @include w1200-
+         max-width: 30px
+         max-height: 30px
+      &:hover
+         fill: #4f5a6e

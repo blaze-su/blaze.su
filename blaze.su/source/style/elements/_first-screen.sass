@@ -1,0 +1,36 @@
+.first-screen
+   background-color: $title-grey
+   background-image: url('../img/first-screen-bg/1st_bg_image_2x.jpg')
+   background-repeat: no-repeat
+   background-size: cover
+   background-position: center
+   min-height: 100vh
+   max-height: 1080px
+   @include w1366
+      background-image: url('../img/first-screen-bg/1st_bg_image_1x.jpg')
+   @include w540
+      background-image: url('../img/first-screen-bg/1st_bg_image_sm.jpg')
+      background-position-x: 47%
+   &__content
+      margin-top: 30vh
+      position: relative
+      left: -8px
+      padding: 0 40px
+      @include w1600
+         left: 0
+      @include w540-
+         margin-top: 23vw
+      & > h1
+         text-transform: uppercase
+         margin-bottom: 30px
+         line-height: 1.3
+         color: #56ccf2
+         @include w540-
+            margin-bottom: 1vw
+      & > h3
+         color: #d6d6d6
+         line-height: 1.3
+      & > .btn-gradient
+         margin-top: 50px
+         @include w540-
+            margin-top: 10vw

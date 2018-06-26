@@ -1,0 +1,21 @@
+.question
+   display: flex
+   background-color: rgba($title-grey, .9)
+   & > .container > h2
+      color: #56ccf2 !important
+      margin-bottom: 15px !important
+   &__sub-title
+      font-size: 36px
+      color: $our-work-grey
+      text-align: center
+      margin-bottom: 40px
+      @include w540-
+         font-size: 27px
+   &-form
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      margin-top: -10px
+      & > *
+         margin: 10px 5px 0
+      &__input

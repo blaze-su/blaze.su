@@ -1,0 +1,17 @@
+block modal
+.modal
+   .modal__side-front
+      button.modal__close
+      p.modal__title Заполните форму ниже и мы свяжемся с вами в ближайшее время
+      form.modal-form
+         input(type="text" name="name" placeholder="Ваше имя").modal-form__input
+         input(type="text" name="email" placeholder="E-mail").modal-form__input
+         input(type="text" name="phone" value="+7 (___) __-__-__").modal-form__input
+         .btn-gradient__wrap
+            button(type="submit").btn-gradient Оставить заявку
+      p(data-use="confidentiality") Гарантируем конфиденциальность Ваших персональных данных
+   .modal__side-back
+      h1 Ваше сообщение
+         br
+         | успешно отправлено!
+      p Наш специалист свяжется с вами в скором времени.

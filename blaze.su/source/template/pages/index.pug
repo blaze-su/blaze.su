@@ -1,0 +1,172 @@
+extends ../_template
+
+block variables
+	- var bodyClass = 'is-home';
+
+block content
+	.services
+		.container
+			h2.title.-bg наши услуги
+
+			-
+				var servicesList = [
+					{svgName: 'icon_1', name: 'Корпоративные сайты', desc: ['Сайты компаний с новостным?', 'разделом, фотогалереей?', 'и прайс-листами']},
+					{svgName: 'icon_2', name: 'Продающие сайты', desc: ['Бизнес-сайты с индивидуальным?', 'дизайном, формой заказа?', 'и перчнем товаров и услуг']},
+					{svgName: 'icon_3', name: 'CRM Bitrix24', desc: ['Комплекс услуг по автоматизации?', 'работы с клиентами и организации?', 'рабочих процессов']},
+					{svgName: 'icon_4', name: 'Контекстная реклама', desc: ['Увеличиваем конверсию рекламной?', 'кампании и не даем улизнуть?', 'заинтересовавшимся клиентам']},
+					{svgName: 'icon_5', name: 'SEO−продвижение', desc: ['Вывод Вашего сайта в ТОП-10?', 'по коммерческим запросам?', 'в поисковых системах?', 'Яндекс и Google']},
+					{svgName: 'icon_6', name: 'Поддержка сайтов', desc: ['Доработка и администрирование?', 'сайтов для успешного ведения?', 'бизнеса в интернете']}
+				]
+			
+			.services-list
+				each item in servicesList
+					a(href="#").services-list__item
+						+svgMix('services-list__item-icon', item.svgName)
+						.services-list__item-info
+							p.services-list__item-name= item.name
+							p.services-list__item-desc
+								each i in item.desc
+									= i
+									br
+						button.btn-sector
+			
+			a(href="#").services__service
+				h2.services__service-name CRM Bitrix24
+				button.btn-sector
+	.our-work
+		.container
+			h2.title.-bg как мы работаем
+			-
+				var steps = [
+					{
+						name: 'аналитика и проектирование',
+						team: 'Проектировщик, Дизайнер, Аналитик',
+						process: [
+							{
+								title: 'Вход',
+								list: ['Концепция','Анализ целевой аудитории','Анализ конкурентов']
+							},
+							{
+								title: 'Процесс',
+								list: ['Сценарии поведения пользователей','Разработка структуры','Юзабилити тестирование']
+							},
+							{
+								title: 'Результат',
+								list: ['Интерактивный прототип']
+							}
+						],
+						tech: 'Adobe Photoshop, Sketch, Invision App',
+						techLinks: ['Ps', 'Sk', 'In']
+					},
+					{
+						name: 'визуальный дизайн',
+						team: 'Дизайнер, Проектировщик, Аналитик',
+						process: [
+							{
+								title: 'Вход',
+								list: ['Концепция','Интерактивный прототип','Материалы клиента']
+							},
+							{
+								title: 'Процесс',
+								list: ['Концепция дизайна','Разработка дизайна']
+							},
+							{
+								title: 'Результат',
+								list: ['Макеты экранов','Интерактивный прототип','Кейс проекта']
+							}
+						],
+						tech: 'Adobe Photoshop, Adobe Illustrator, After Effects, Sketch, Invision App',
+						techLinks: ['Ps','Ai','Ae','Sk','In']
+					},
+					{
+						name: 'разработка и поддержка',
+						team: 'Дизайнер, Frontend−разработчик, Программист, Тестировщик',
+						process: [
+							{
+								title: 'Вход',
+								list: ['Макеты экранов','Интерактивный прототип']
+							},
+							{
+								title: 'Процесс',
+								list: ['Техническое проектирование','Адаптивная верстка','Разработка модулей', 'Настройка CMS', 'Тестирование и отладка']
+							},
+							{
+								title: 'Результат',
+								list: ['Веб−сайт','API','Административная панель']
+							}
+						],
+						tech: 'VS Code, Gulp, Git, Zepplin',
+						techLinks: ['Vs', 'Gu', 'Gt', 'Zp']
+					},
+				]
+
+			.our-work__steps
+				each item, key in steps
+					.our-work__step
+						.our-work__step-wrap
+							.our-work__step-title-box
+								.our-work__step-count= key+1
+								p.our-work__step-title= item.name
+							.our-work__step-content
+								.our-work__step-team-wrap
+									span.our-work__step-team-mark Участники
+									p.our-work__step-team= item.team
+								.our-work__step-process-wrap
+									each i in item.process
+										.our-work__step-process
+											p.our-work__step-process-title= i.title
+											ul.our-work__step-process-list
+												each j in i.list
+													li.our-work__step-process-item= j
+								.our-work__step-tech-wrap
+									p.our-work__step-tech-title Технологии
+									p.our-work__step-tech= item.tech
+									.our-work__step-tech-list
+										each i in item.techLinks
+											.our-work__step-tech-item= i
+	.question
+		.container
+			h2.title.-bg остались вопросы?
+			p.question__sub-title Задайте вопрос специалисту
+			form.question-form
+				input(type="text" name="name" placeholder="Ваше имя").question-form__input
+				input(type="text" name="phone" value="+7 (___) __-__-__").question-form__input
+				.btn-gradient__wrap
+					button(type="submit").btn-gradient Задать вопрос
+	.clients
+		.container
+			h2.title.-bg наши клиенты
+			- var i = 1;
+			.clients__list-wrap
+				.clients__list
+					while i < 16
+						a(href="#").clients__item
+							img.clients__item-image(src="assets/img/clients/"+ i +"-hover.png", alt="")
+							img.clients__item-image(src="assets/img/clients/"+ i++ +".png", alt="")
+	.new-articles
+		.container
+			h2.title.-bg новые статьи
+
+			-
+				var articles = [
+					{name: ['14 шагов: как сделать контент-маркетинг полезным'], author: 'Александр Сидоров'},
+					{name: ['Как выбрать', 'название стартапа'], author: 'Вадим Постол'},
+					{name: ['Что нужно знать при заказе?', 'SEO в 2017'], author: 'Юрий Горяев'}
+				]
+			.new-articles__list-wrap
+				.new-articles__list
+					each item, key in articles
+						.new-articles__item
+							a(href="#").new-articles__item-link
+								img(src="assets/img/new-articles/"+ (key+1) +".png", alt="").new-articles__item-image
+							.new-articles__item-content
+								a(href="#").new-articles__item-title
+									each i, key2 in item.name
+										if (key2 !== 0)
+											br
+											= i
+										else
+											= i
+								p.new-articles__item-author= item.author
+			.direct-link__wrap
+				a(href="#").direct-link Перейти в блог

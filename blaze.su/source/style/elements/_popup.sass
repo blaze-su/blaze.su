@@ -1,0 +1,131 @@
+.modal
+   width: max-content
+   top: 50%
+   left: 50%
+   transform: translate(-50%, -50%)
+   position: fixed
+   color: $white
+   z-index: 10000
+   display: none
+   @include w540-
+      width: 100vw
+      height: 100vh
+   &.-open
+      display: flex
+      transform: translate(-50%, -50%)
+      & > .modal__side-front
+         // transform: scale(1)
+   &.-sent
+      & > .modal__side-front
+         transform: rotateY(-180deg)
+      & > .modal__side-back
+         transform: translate(-50%, -50%) rotateY(0deg)         
+   &:after
+      z-index: -1
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 101vw
+      height: 101vh
+      transform: translate(-50%, -50%)
+      background:
+         color: rgb(25,29,36)
+         image: url('../img/first-screen-bg/bg_filter_desktop_2x.jpg')
+         size: cover
+         repeat: no-repeat
+         position: center
+      @include w1366
+         background-image: url('../img/first-screen-bg/bg_filter_desktop_1x.jpg')
+      @include w768
+         background-image: url('../img/first-screen-bg/bg_filter_tablet.jpg')
+      @include w320
+         background:
+            image: none
+   &__side
+      &-front
+         transition: all 1s ease
+         // transform: scale(0)
+         backface-visibility: hidden
+         max-width: 340px
+         width: 100%
+         padding: 50px 50px 40px
+         background-color: rgb(25,29,36)
+         @include w540-
+            margin: auto
+            max-width: 320px
+            padding: 40px
+         @media all and (min-width: 321px) and (max-width: 539px)
+            position: relative
+         & > p[data-use="confidentiality"]
+            font-size: 13px
+            line-height: 1.54
+            color: #535b69
+            position: relative
+            padding-left: 26px
+            margin-top: 15px
+            &:before
+               position: absolute
+               width: 16px
+               height: 16px
+               display: block
+               content: ''
+               background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQwMS45OTggNDAxLjk5OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDAxLjk5OCA0MDEuOTk4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTM1Ny40NSwxOTAuNzIxYy01LjMzMS01LjMzLTExLjgtNy45OTMtMTkuNDE3LTcuOTkzaC05LjEzMXYtNTQuODIxYzAtMzUuMDIyLTEyLjU1OS02NS4wOTMtMzcuNjg1LTkwLjIxOCAgIEMyNjYuMDkzLDEyLjU2MywyMzYuMDI1LDAsMjAwLjk5OCwwYy0zNS4wMjYsMC02NS4xLDEyLjU2My05MC4yMjIsMzcuNjg4Qzg1LjY1LDYyLjgxNCw3My4wOTEsOTIuODg0LDczLjA5MSwxMjcuOTA3djU0LjgyMSAgIGgtOS4xMzVjLTcuNjExLDAtMTQuMDg0LDIuNjYzLTE5LjQxNCw3Ljk5M2MtNS4zMyw1LjMyNi03Ljk5NCwxMS43OTktNy45OTQsMTkuNDE3VjM3NC41OWMwLDcuNjExLDIuNjY1LDE0LjA4Niw3Ljk5NCwxOS40MTcgICBjNS4zMyw1LjMyNSwxMS44MDMsNy45OTEsMTkuNDE0LDcuOTkxSDMzOC4wNGM3LjYxNywwLDE0LjA4NS0yLjY2MywxOS40MTctNy45OTFjNS4zMjUtNS4zMzEsNy45OTQtMTEuODA2LDcuOTk0LTE5LjQxN1YyMTAuMTM1ICAgQzM2NS40NTUsMjAyLjUyMywzNjIuNzgyLDE5Ni4wNTEsMzU3LjQ1LDE5MC43MjF6IE0yNzQuMDg3LDE4Mi43MjhIMTI3LjkwOXYtNTQuODIxYzAtMjAuMTc1LDcuMTM5LTM3LjQwMiwyMS40MTQtNTEuNjc1ICAgYzE0LjI3Ny0xNC4yNzUsMzEuNTAxLTIxLjQxMSw1MS42NzgtMjEuNDExYzIwLjE3OSwwLDM3LjM5OSw3LjEzNSw1MS42NzcsMjEuNDExYzE0LjI3MSwxNC4yNzIsMjEuNDA5LDMxLjUsMjEuNDA5LDUxLjY3NVYxODIuNzI4ICAgeiIgZmlsbD0iIzUzNWI2OSIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
+               top: 0
+               left: 0
+      &-back
+         transition: all 1s ease
+         backface-visibility: hidden
+         max-width: 590px
+         padding: 0 10px
+         position: absolute
+         top: 50%
+         width: max-content
+         left: 50%
+         transform: translate(-50%, -50%) rotateY(180deg)
+         @media all and (max-width: 590px)
+            max-width: 100%
+         & > h1
+            color: #56ccf2
+            text-align: center
+            margin-bottom: 20px
+         & > p
+            font-size: 36px
+            color: $our-work-grey
+            text-align: center
+            @include w540-
+               font-size: 27px
+   &__close
+      position: absolute
+      width: 15px
+      height: 15px
+      top: 10px
+      right: 10px
+      @include w320
+         height: 30px
+         width: 30px
+      &:before,
+      &:after
+         position: absolute
+         content: ''
+         width: 15px
+         height: 2px
+         background-color: #505D73
+         left: 0
+         top: 50%
+         margin-top: -1px
+         @include w320
+            width: 30px
+            height: 4px
+            margin-top: -2px
+      &:before
+         transform: rotate(45deg)
+      &:after
+         transform: rotate(-45deg)
+   &__title
+      font-size: 22px
+      line-height: 1.2
+      margin-bottom: 25px
+   &-form
+      &__input
+         margin-bottom: 10px

@@ -1,0 +1,26 @@
+extends ../_template
+
+block content
+	div.text-svg
+		svg#svg
+		script.
+			window.addEventListener('load', () => {
+				document.onclick = () => {
+					var s = Snap('#svg');
+					var bigCircle = s.circle(550, 550, 25);
+					bigCircle.attr({
+						fill: "transparent",
+						stroke: 'transparent',
+						strokeWidth: 150
+					});
+					var smallCircle = s.circle(550, 550, 0);
+					smallCircle.attr({
+						fill: "#fff"
+					});
+					var discs = s.group(smallCircle, bigCircle);
+					smallCircle.animate({r: 100}, 500, () => {
+						bigCircle.attr({stroke: '#fff'});
+						bigCircle.animate({r: 400}, 1500);
+					});
+				}
+			});	

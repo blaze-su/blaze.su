@@ -1,0 +1,206 @@
+@import './common/_const.sass'
+@import './_header.sass'
+@import './_footer.sass'
+
+@import './elements/**/*.sass'
+@import './page&page-section/**/*.sass'
+
+
+.title
+
+h1
+	font-family: 'RobotoBold'
+	line-height: 1.2
+	@include w1366
+		font-size: 44px
+	@include w768-
+		font-size: 40px
+	&.-lg
+		font-size: 60px
+h2
+	font-size: 50px
+	line-height: 1.2
+	font-family: 'RobotoBold'
+	@include w540-
+		font-size: 36px
+	&.title
+		&.-bg
+			display: inline-block
+			width: 100%
+			margin: 90px auto 50px
+			text-transform: uppercase
+			text-align: center
+			color: $title-grey
+			@include w540-
+				margin: 50px auto 30px
+h3
+	font-size: 40px
+	line-height: 1.2
+	@include w1366
+		font-size: 36px
+	@include w768-
+		font-size: 32px
+	&.-md
+
+
+html
+	font: 20px 'RobotoLight'
+	min-width: 320px
+	width: 100%
+	height: auto
+
+body
+	position: relative
+	min-width: 320px
+	width: 100%
+	min-height: 100vh
+	height: auto
+	display: flex
+	flex-direction: column
+	line-height: 1
+	margin: 0 auto
+	background: $main-bg-grey
+	overflow-x: hidden
+
+.container
+	max-width: 1280px
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	&.-big
+		max-width: 1920px
+
+.logo
+	&-link
+		display: flex
+		width: max-content
+	&-img
+		width: auto
+
+.main
+	& > div
+		padding-bottom: 100px
+		@include w540-
+			padding-bottom: 60px
+
+.contacts
+	&-city
+	&-phone
+		color: $header-grey
+		& > span
+			color: #878f99
+
+.btn
+	&-gradient
+		padding-left: 20px
+		text-align: left
+		color: $white
+		font-size: 1rem
+		width: 240px
+		height: 60px
+		background-color: transparent
+		background-repeat: no-repeat
+		position: relative
+		&:after
+			content: ''
+			position: absolute
+			top: 50%
+			right: 27px
+			width: 12px
+			height: 16px
+			transform: translateY(-50%)
+			background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTIuMDA0IDQ5Mi4wMDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5Mi4wMDQgNDkyLjAwNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zODIuNjc4LDIyNi44MDRMMTYzLjczLDcuODZDMTU4LjY2NiwyLjc5MiwxNTEuOTA2LDAsMTQ0LjY5OCwwcy0xMy45NjgsMi43OTItMTkuMDMyLDcuODZsLTE2LjEyNCwxNi4xMiAgICBjLTEwLjQ5MiwxMC41MDQtMTAuNDkyLDI3LjU3NiwwLDM4LjA2NEwyOTMuMzk4LDI0NS45bC0xODQuMDYsMTg0LjA2Yy01LjA2NCw1LjA2OC03Ljg2LDExLjgyNC03Ljg2LDE5LjAyOCAgICBjMCw3LjIxMiwyLjc5NiwxMy45NjgsNy44NiwxOS4wNGwxNi4xMjQsMTYuMTE2YzUuMDY4LDUuMDY4LDExLjgyNCw3Ljg2LDE5LjAzMiw3Ljg2czEzLjk2OC0yLjc5MiwxOS4wMzItNy44NkwzODIuNjc4LDI2NSAgICBjNS4wNzYtNS4wODQsNy44NjQtMTEuODcyLDcuODQ4LTE5LjA4OEMzOTAuNTQyLDIzOC42NjgsMzg3Ljc1NCwyMzEuODg0LDM4Mi42NzgsMjI2LjgwNHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+			background-repeat: no-repeat
+			display: block
+		&:not(:active):hover
+			width: 292px
+			height: 110px
+			left: -25px
+			top: -25px
+			padding-left: 45px
+			&:after
+				right: 54px
+		&__wrap
+			width: 240px
+			height: 60px
+	&-sector
+		width: 82px
+		height: 75px
+		background: url('../img/sprite.png') -112px -151px
+		&:not(:active):hover
+			background: url('../img/sprite.png') -10px -10px !important
+			width: 101px
+			height: 96px
+		&:active
+			background: url('../img/sprite.png') -156px -10px !important
+
+.direct-link
+	border: 1px solid rgba($title-grey, .3)
+	padding: 0 45px 0 24px
+	width: 240px
+	height: 60px
+	color: #2d3440
+	display: flex
+	margin: 50px auto 0
+	align-items: center
+	+Roboto()
+	position: relative
+	background-repeat: no-repeat
+	&__wrap
+		position: relative
+		width: 240px
+		height: 60px
+	&:after
+		content: ''
+		width: 6px
+		height: 12px
+		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MC44MjMgMjQwLjgyMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQwLjgyMyAyNDAuODIzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPHBhdGggaWQ9IkNoZXZyb25fUmlnaHRfMV8iIGQ9Ik0xODMuMTg5LDExMS44MTZMNzQuODkyLDMuNTU1Yy00Ljc1Mi00Ljc0LTEyLjQ1MS00Ljc0LTE3LjIxNSwwYy00Ljc1Miw0Ljc0LTQuNzUyLDEyLjQzOSwwLDE3LjE3OSAgIGw5OS43MDcsOTkuNjcxbC05OS42OTUsOTkuNjcxYy00Ljc1Miw0Ljc0LTQuNzUyLDEyLjQzOSwwLDE3LjE5MWM0Ljc1Miw0Ljc0LDEyLjQ2Myw0Ljc0LDE3LjIxNSwwbDEwOC4yOTctMTA4LjI2MSAgIEMxODcuODgxLDEyNC4zMTUsMTg3Ljg4MSwxMTYuNDk1LDE4My4xODksMTExLjgxNnoiIGZpbGw9IiMyZDM0NDAiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+		background-repeat: no-repeat
+		background-position: -7px center
+		position: absolute
+		right: 24px
+		top: calc(50% - 5px)
+	&:not(:active):hover
+		width: 292px
+		height: 110px
+		top: -25px
+		left: -25px
+		padding-left: 50px
+		// background-image: url('../img/button/button_hover.svg')
+		&:after
+			right: 51px
+	&:active
+		padding-left: 25px
+		// background-image: url('../img/button/button_idle.svg')
+	&:hover
+		color: $white
+		border: none
+		&:after
+			background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MC44MjMgMjQwLjgyMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQwLjgyMyAyNDAuODIzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPHBhdGggaWQ9IkNoZXZyb25fUmlnaHRfMV8iIGQ9Ik0xODMuMTg5LDExMS44MTZMNzQuODkyLDMuNTU1Yy00Ljc1Mi00Ljc0LTEyLjQ1MS00Ljc0LTE3LjIxNSwwYy00Ljc1Miw0Ljc0LTQuNzUyLDEyLjQzOSwwLDE3LjE3OSAgIGw5OS43MDcsOTkuNjcxbC05OS42OTUsOTkuNjcxYy00Ljc1Miw0Ljc0LTQuNzUyLDEyLjQzOSwwLDE3LjE5MWM0Ljc1Miw0Ljc0LDEyLjQ2Myw0Ljc0LDE3LjIxNSwwbDEwOC4yOTctMTA4LjI2MSAgIEMxODcuODgxLDEyNC4zMTUsMTg3Ljg4MSwxMTYuNDk1LDE4My4xODksMTExLjgxNnoiIGZpbGw9IiNGRkZGRkYiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K)
+
+form
+	& *
+		font-family: 'RobotoLight'
+	& input[type='text']
+		width: 240px
+		height: 60px
+		border: 1px solid $input-border
+		color: $input-border
+		padding: 0 24px
+		font-size: 1rem
+		&:focus
+			border-color: $input-border-focus
+			color: $input-border-focus
+		&.-error
+			border-color: $input-border-error
+			color: $input-border-error
+
+
+#svg
+	width: 1026px
+	height: 1025px
+	margin-top: -75px
+	margin-left: -74px
+
+.text-svg
+	background-color: grey

@@ -1,0 +1,21 @@
+//- svg mixin
+mixin svgMix(svgClass, name)
+	svg(class=svgClass)
+		use(xlink:href='assets/img/sprite.svg#'+name)
+
+mixin menu(menuLocate)
+	if (menuLocate)
+		- var _cl = "menu " + menuLocate;
+	else
+		- var _cl = "menu";
+	nav(class=_cl)
+		-
+			var menuItems = [
+				{href: '#', text: 'Услуги'},
+				{href: '#', text: 'О нас'},
+				{href: '#', text: 'Портфолио'},
+				{href: '#', text: 'Блог'},
+				{href: '#', text: 'Контакты'}
+			]
+		each item in menuItems
+			a(href=item.href).menu__item= item.text

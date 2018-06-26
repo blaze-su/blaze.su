@@ -1,0 +1,22 @@
+block header
+	header.header
+		.container.-big
+			.header__left-area
+				a.logo-link(href="/")
+					img.logo-img(src="/assets/img/logo.svg", alt="logotype")
+				.header-contacts
+					.header-contacts__select
+						p.header-contacts__select-check
+							span г.&nbsp
+							| Санкт–Перербург
+						ul.header-contacts__select-list
+							li.header-contacts__select-item Краснодар
+							li.header-contacts__select-item Москва
+					p.contacts-phone
+						span +7 (921) 
+						| 55-66-846
+			.header__menu-area
+				+menu('-header')
+				button.alt-menu-btn(data-state='no-active')
+					span
+				button.header__enter

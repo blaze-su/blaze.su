@@ -1,0 +1,22 @@
+.menu
+   display: flex
+   color: #f0f0f0
+   &.-header
+      @include w1366-
+         display: none
+   &.-footer
+      & > .menu__item
+         @include w1200-
+            margin-right: 57px
+         &:last-child
+            @include w1200-
+               margin-right: 0
+   &__item
+      white-space: nowrap
+      margin-right: 4.01vw
+      opacity: .8
+      @include w1600
+         margin-right: 3vw
+      &:hover
+         color: $white
+         opacity: 1
